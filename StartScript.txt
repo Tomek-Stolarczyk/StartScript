@@ -4,3 +4,4 @@ choco upgrade chocolatey
 choco install git.commandline -y
 choco install poshgit -y
 choco install llvm -y
+choco install vscode -y
