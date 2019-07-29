@@ -1,6 +1,7 @@
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 Install-PackageProvider -Name NuGet -Force
 Install-Module PowerShellGet -Scope CurrentUser -Force -AllowClobber
-& https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/PortableGit-2.22.0-64-bit.7z.exe
+Invoke-WebRequest -Uri https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/PortableGit-2.22.0-64-bit.7z.exe -OutFile [Environment]::GetFolderPath("Desktop") + "/PortableGit-2.22.0-64-bit.7z.exe"
+Start-Process -Filepath [Environment]::GetFolderPath("Desktop") + "/PortableGit-2.22.0-64-bit.7z.exe"
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
 Add-PoshGitToProfile -AllHosts
